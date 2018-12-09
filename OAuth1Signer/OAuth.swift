@@ -10,32 +10,41 @@ import Foundation
 import Security
 import CommonCrypto
 
-typealias AuthorizationHeader = String
-
-struct OAuth {
-    static let SHA_BITS = "256"
+public struct OAuth {
     
-    static func getAuthorizationHeader(forUri uri: URL,
-                                       method: String,
-                                       payload: String?,
-                                       consumerKey: String,
-                                       signingKey: String) throws -> AuthorizationHeader {
+    public typealias AuthorizationHeader = String
+    
+    public static func authorizationHeader(forUri uri: URL,
+                                           method: String,
+                                           payload: String?,
+                                           consumerKey: String,
+                                           signingKey: String) throws -> AuthorizationHeader {
         
-        let baseUri = uri.baseURL?.absoluteString.lowercased() ?? ""
-        let queryParams = uri.queryParams()
-        var authParams = oauthParams(withKey: consumerKey, payload: payload)
-        let sbs = signatureBaseString(httpMethod: method, baseUri: baseUri, paramString: uri.query ?? "")
+        let queryParams = uri.queryParameters()
+        
+        var oauthParams = oauthParameters(withKey: consumerKey, payload: payload)
+        
+        let paramString = oauthParamString(forQueryParameters: queryParams, oauthParameters: oauthParams)
+        print("paramString")
+        debugPrint(paramString)
+        
+        let sbs = signatureBaseString(httpMethod: method, baseUri: uri.lowercasedBaseUrl(), paramString: paramString)
         
         // Signature
+    
         let signature = signSignatureBaseString(sbs: sbs, signingKey: signingKey)
         let encodedSignature = signature //.addingPercentEncoding(withAllowedCharacters: .)
-        authParams["oauth_signature"] = encodedSignature
+        oauthParams["oauth_signature"] = encodedSignature
         
-        return authorizationString(oauthParams: authParams)
+        return authorizationString(oauthParams: oauthParams)
     }
 }
 
 extension OAuth {
+    
+    static func signOauthParameters() {
+        
+    }
     
     static func signSignatureBaseString(sbs: String, signingKey: String) -> String {
         return ""
@@ -61,7 +70,7 @@ extension OAuth {
     }
     
     static func currentUnixTimestamp() -> String {
-        return String(Date().timeIntervalSince1970)
+        return String(Int(Date().timeIntervalSince1970))
     }
     
     static func nonce() -> String {
@@ -75,7 +84,7 @@ extension OAuth {
         }.joined()
     }
     
-    static func oauthParams(withKey consumerKey: String, payload: String?) -> [String: String] {
+    static func oauthParameters(withKey consumerKey: String, payload: String?) -> [String: String] {
         var oauthParams = [String: String]()
         if payload != nil {
             oauthParams["oauth_body_hash"] = payload?.sha256() ?? ""
@@ -86,6 +95,11 @@ extension OAuth {
         oauthParams["oauth_timestamp"] = currentUnixTimestamp()
         oauthParams["oauth_version"] = "1.0"
         return oauthParams
+    }
+    
+    static func oauthParamString(forQueryParameters queryParameters: UrlParameterMap?,
+                                 oauthParameters: [String: String]) -> String {
+        return ""
     }
     
     static func getBodyHash() -> String {
@@ -123,19 +137,29 @@ extension Data {
     }
 }
 
+typealias UrlParameterMap = [String: Set<String>]
+
 extension URL {
-    func queryParams() -> [URLQueryItem]? {
+    func queryParameters() -> UrlParameterMap? {
         guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true) else {
             return nil
         }
-        return components.queryItems?.sorted()
-        // TODO: values for parameters with the same name are added into a list ?? Is this ever necessary?
-        // TODO: components.percentEncodedQueryItems instead ??
+        
+        let uniqueQueryItems = components.queryItems?.reduce(into: UrlParameterMap()) { uniqueMap, queryItem in
+            uniqueMap[queryItem.name, default: []].insert(queryItem.value ?? "")
+        }
+        
+        return uniqueQueryItems?.sorted()
+        // TODO: components.percentEncodedQueryItems instead ?
+    }
+    
+    func lowercasedBaseUrl() -> String {
+        return baseURL?.absoluteString.lowercased() ?? ""
     }
 }
 
-extension URLQueryItem: Comparable {
-    public static func < (lhs: URLQueryItem, rhs: URLQueryItem) -> Bool {
-        return lhs.name.lowercased() < rhs.name.lowercased()
+extension Dictionary where Key == String {
+    func sorted() -> Dictionary {
+        return sorted{ $0.key < $1.key }.reduce(into: [:]) { $0[$1.0] = $1.1 }
     }
 }
