@@ -10,6 +10,7 @@
 		C314EF6E21B35806002E0A53 /* OAuth1Signer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C314EF6421B35806002E0A53 /* OAuth1Signer.framework */; };
 		C314EF7321B35806002E0A53 /* OAuth1SignerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314EF7221B35806002E0A53 /* OAuth1SignerTests.swift */; };
 		C314EF7521B35806002E0A53 /* OAuth1Signer.h in Headers */ = {isa = PBXBuildFile; fileRef = C314EF6721B35806002E0A53 /* OAuth1Signer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C314EF7F21B4AFB1002E0A53 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314EF7E21B4AFB1002E0A53 /* OAuth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		C314EF6D21B35806002E0A53 /* OAuth1SignerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OAuth1SignerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C314EF7221B35806002E0A53 /* OAuth1SignerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth1SignerTests.swift; sourceTree = "<group>"; };
 		C314EF7421B35806002E0A53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C314EF7E21B4AFB1002E0A53 /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				C314EF6721B35806002E0A53 /* OAuth1Signer.h */,
+				C314EF7E21B4AFB1002E0A53 /* OAuth.swift */,
 				C314EF6821B35806002E0A53 /* Info.plist */,
 			);
 			path = OAuth1Signer;
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					C314EF6321B35806002E0A53 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					C314EF6C21B35806002E0A53 = {
 						CreatedOnToolsVersion = 10.1;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C314EF7F21B4AFB1002E0A53 /* OAuth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +346,7 @@
 		C314EF7921B35806002E0A53 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.reikam.OAuth1Signer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +373,7 @@
 		C314EF7A21B35806002E0A53 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +399,7 @@
 		C314EF7C21B35806002E0A53 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79X9YF69H4;
 				INFOPLIST_FILE = OAuth1SignerTests/Info.plist;
@@ -409,6 +418,7 @@
 		C314EF7D21B35806002E0A53 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79X9YF69H4;
 				INFOPLIST_FILE = OAuth1SignerTests/Info.plist;
