@@ -18,7 +18,7 @@ public struct OAuth {
                                            method: String,
                                            payload: String?,
                                            consumerKey: String,
-                                           signingKey: String) throws -> AuthorizationHeader {
+                                           signingPrivateKey: SecKey) throws -> AuthorizationHeader {
         
         let queryParams = uri.queryParameters()
         var oauthParams = oauthParameters(withKey: consumerKey, payload: payload)
@@ -26,29 +26,37 @@ public struct OAuth {
         
         let sbs = signatureBaseString(httpMethod: method, baseUri: uri.lowercasedBaseUrl(), paramString: paramString)
         
-        // Signature
-    
-        let signature = signSignatureBaseString(sbs: sbs, signingKey: signingKey)
-        
-        print("signedSignature")
-        debugPrint(signature)
-        
-        
-        let encodedSignature = signature //.addingPercentEncoding(withAllowedCharacters: .)
-        oauthParams["oauth_signature"] = encodedSignature
-        
-        return authorizationString(oauthParams: oauthParams)
+        do {
+            let signature = try signSignatureBaseString(sbs: sbs, signingKey: signingPrivateKey)
+            print("signedSignature")
+            debugPrint(signature)
+            
+            let encodedSignature = signature //.addingPercentEncoding(withAllowedCharacters: .)
+            oauthParams["oauth_signature"] = encodedSignature
+            return authorizationString(oauthParams: oauthParams)
+            
+        } catch {
+            throw error.localizedDescription
+        }
     }
 }
 
 extension OAuth {
     
-    static func signOauthParameters() {
+    static func signSignatureBaseString(sbs: String, signingKey: SecKey) throws -> String {
         
-    }
-    
-    static func signSignatureBaseString(sbs: String, signingKey: String) -> String {
-        return ""
+        guard SecKeyIsAlgorithmSupported(signingKey, .sign, .rsaSignatureMessagePKCS1v15SHA256) else {
+            throw "Provided private key is invalid."
+        }
+        
+        let sbsData = sbs.data(using: .utf8)!
+        var error: Unmanaged<CFError>?
+        guard let signedData = SecKeyCreateSignature(signingKey, .rsaSignatureMessagePKCS1v15SHA256, sbsData as CFData, &error) else {
+            throw error!.takeRetainedValue() as Error
+        }
+        
+        let signature = (signedData as Data).base64EncodedString() // TODO: Can I cast to Data like this?
+        return signature
     }
     
     static func authorizationString(oauthParams: [String: String]) -> String {
