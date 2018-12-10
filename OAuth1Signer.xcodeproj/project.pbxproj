@@ -11,6 +11,7 @@
 		C314EF7321B35806002E0A53 /* OAuth1SignerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314EF7221B35806002E0A53 /* OAuth1SignerTests.swift */; };
 		C314EF7521B35806002E0A53 /* OAuth1Signer.h in Headers */ = {isa = PBXBuildFile; fileRef = C314EF6721B35806002E0A53 /* OAuth1Signer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C314EF7F21B4AFB1002E0A53 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314EF7E21B4AFB1002E0A53 /* OAuth.swift */; };
+		C369334621BE39FB00FA4B18 /* ***REMOVED***.p12 in Resources */ = {isa = PBXBuildFile; fileRef = C369334421BE381500FA4B18 /* ***REMOVED***.p12 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		C314EF7221B35806002E0A53 /* OAuth1SignerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth1SignerTests.swift; sourceTree = "<group>"; };
 		C314EF7421B35806002E0A53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C314EF7E21B4AFB1002E0A53 /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
+		C369334421BE381500FA4B18 /* ***REMOVED***.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "***REMOVED***.p12"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		C314EF7121B35806002E0A53 /* OAuth1SignerTests */ = {
 			isa = PBXGroup;
 			children = (
+				C369334421BE381500FA4B18 /* ***REMOVED***.p12 */,
 				C314EF7221B35806002E0A53 /* OAuth1SignerTests.swift */,
 				C314EF7421B35806002E0A53 /* Info.plist */,
 			);
@@ -188,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C369334621BE39FB00FA4B18 /* ***REMOVED***.p12 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
