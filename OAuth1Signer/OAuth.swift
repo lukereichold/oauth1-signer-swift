@@ -163,7 +163,8 @@ extension URL {
     }
     
     func lowercasedBaseUrl() -> String {
-        return baseURL?.absoluteString.lowercased() ?? ""
+        guard let scheme = scheme?.lowercased(), let host = host?.lowercased() else { return "" }
+        return "\(scheme)://\(host)\(path)"
     }
 }
 
