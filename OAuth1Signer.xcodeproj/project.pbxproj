@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		009E109A9B6B4F197BBB230C /* Pods_OAuth1SignerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB88EC3FE683836C54E9B /* Pods_OAuth1SignerTests.framework */; };
+		4E6BEC397B7B05496067D31C /* Pods_OAuth1Signer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E4B63C296A52D8CC5925FE /* Pods_OAuth1Signer.framework */; };
 		C314EF6E21B35806002E0A53 /* OAuth1Signer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C314EF6421B35806002E0A53 /* OAuth1Signer.framework */; };
 		C314EF7321B35806002E0A53 /* OAuth1SignerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314EF7221B35806002E0A53 /* OAuth1SignerTests.swift */; };
 		C314EF7521B35806002E0A53 /* OAuth1Signer.h in Headers */ = {isa = PBXBuildFile; fileRef = C314EF6721B35806002E0A53 /* OAuth1Signer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,6 +27,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58E4B63C296A52D8CC5925FE /* Pods_OAuth1Signer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OAuth1Signer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98F5A4F4110F7F009489D70A /* Pods-OAuth1SignerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAuth1SignerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OAuth1SignerTests/Pods-OAuth1SignerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B9FC27083CDD56AD43F02B8D /* Pods-OAuth1Signer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAuth1Signer.release.xcconfig"; path = "Pods/Target Support Files/Pods-OAuth1Signer/Pods-OAuth1Signer.release.xcconfig"; sourceTree = "<group>"; };
 		C314EF6421B35806002E0A53 /* OAuth1Signer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OAuth1Signer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C314EF6721B35806002E0A53 /* OAuth1Signer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OAuth1Signer.h; sourceTree = "<group>"; };
 		C314EF6821B35806002E0A53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +38,9 @@
 		C314EF7421B35806002E0A53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C314EF7E21B4AFB1002E0A53 /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 		C369334421BE381500FA4B18 /* ***REMOVED***.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "***REMOVED***.p12"; sourceTree = "<group>"; };
+		C74E027D4AF500D598C955B9 /* Pods-OAuth1Signer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAuth1Signer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OAuth1Signer/Pods-OAuth1Signer.debug.xcconfig"; sourceTree = "<group>"; };
+		EE0CB88EC3FE683836C54E9B /* Pods_OAuth1SignerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OAuth1SignerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F94EAF52ACA1D14DE51DB08D /* Pods-OAuth1SignerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAuth1SignerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OAuth1SignerTests/Pods-OAuth1SignerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E6BEC397B7B05496067D31C /* Pods_OAuth1Signer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,18 +57,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				C314EF6E21B35806002E0A53 /* OAuth1Signer.framework in Frameworks */,
+				009E109A9B6B4F197BBB230C /* Pods_OAuth1SignerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ABA3885B6D16ACA4A22E8735 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C74E027D4AF500D598C955B9 /* Pods-OAuth1Signer.debug.xcconfig */,
+				B9FC27083CDD56AD43F02B8D /* Pods-OAuth1Signer.release.xcconfig */,
+				98F5A4F4110F7F009489D70A /* Pods-OAuth1SignerTests.debug.xcconfig */,
+				F94EAF52ACA1D14DE51DB08D /* Pods-OAuth1SignerTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C314EF5A21B35806002E0A53 = {
 			isa = PBXGroup;
 			children = (
 				C314EF6621B35806002E0A53 /* OAuth1Signer */,
 				C314EF7121B35806002E0A53 /* OAuth1SignerTests */,
 				C314EF6521B35806002E0A53 /* Products */,
+				ABA3885B6D16ACA4A22E8735 /* Pods */,
+				EAC6C5B29989FEB4902C2630 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +115,15 @@
 			path = OAuth1SignerTests;
 			sourceTree = "<group>";
 		};
+		EAC6C5B29989FEB4902C2630 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58E4B63C296A52D8CC5925FE /* Pods_OAuth1Signer.framework */,
+				EE0CB88EC3FE683836C54E9B /* Pods_OAuth1SignerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -110,6 +142,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C314EF7821B35806002E0A53 /* Build configuration list for PBXNativeTarget "OAuth1Signer" */;
 			buildPhases = (
+				1FA5E1D8985DBCF16A560F79 /* [CP] Check Pods Manifest.lock */,
 				C314EF5F21B35806002E0A53 /* Headers */,
 				C314EF6021B35806002E0A53 /* Sources */,
 				C314EF6121B35806002E0A53 /* Frameworks */,
@@ -128,9 +161,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C314EF7B21B35806002E0A53 /* Build configuration list for PBXNativeTarget "OAuth1SignerTests" */;
 			buildPhases = (
+				19C31227BDC363A506DEF8B2 /* [CP] Check Pods Manifest.lock */,
 				C314EF6921B35806002E0A53 /* Sources */,
 				C314EF6A21B35806002E0A53 /* Frameworks */,
 				C314EF6B21B35806002E0A53 /* Resources */,
+				B453377D70D2648DE8B57B2D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,6 +231,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19C31227BDC363A506DEF8B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OAuth1SignerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1FA5E1D8985DBCF16A560F79 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OAuth1Signer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B453377D70D2648DE8B57B2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OAuth1SignerTests/Pods-OAuth1SignerTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OAuth1SignerTests/Pods-OAuth1SignerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C314EF6021B35806002E0A53 /* Sources */ = {
@@ -349,6 +453,7 @@
 		};
 		C314EF7921B35806002E0A53 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C74E027D4AF500D598C955B9 /* Pods-OAuth1Signer.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -376,6 +481,7 @@
 		};
 		C314EF7A21B35806002E0A53 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9FC27083CDD56AD43F02B8D /* Pods-OAuth1Signer.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -402,6 +508,7 @@
 		};
 		C314EF7C21B35806002E0A53 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98F5A4F4110F7F009489D70A /* Pods-OAuth1SignerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -421,6 +528,7 @@
 		};
 		C314EF7D21B35806002E0A53 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F94EAF52ACA1D14DE51DB08D /* Pods-OAuth1SignerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
