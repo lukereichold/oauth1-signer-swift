@@ -18,10 +18,21 @@ class OAuth1SignerTests: XCTestCase {
     }
 
     func testExample() {
-//        OAuth.getAuthorizationHeader(forUri: "a", method: "a", payload: "A", consumerKey: "a", signingKey: "a")
-        let url = URL(string: "http://example.com?query1=foo1&query1=bar&query3=baz")
-        let params = url?.queryParams()
-        debugPrint(params)
+        
+        
+        let consumerKey = "iRs6nIIfPGEYJsZH-OBvXKBC2xXA464BNDscijDX6764fad4!7599e036db964177a3b470857c7e56b80000000000000000";
+//        let signingKey = "308204be020100300d06092a864886f70d0101010500048204a8308204a402010002820101008b559dc70f777b933a93403c5c405291f85e892543c9121230c38d6f3c6bbd5e13fa1f2283814e8411093c3b2221d4c3251426816f9d38842f6995188953f4b19726513f9684988d14250c19f47b5a8379b5788f6845ea4165e346adf6adfd2a06efc78d5a4d1e7f84f919ddfc1e3832f660956bb7649facd48730cf13b9c9b4d4f4adb77a514b9204b20c8af470a83bd70c1baf6e3646d0c90efe46a3d8b2daa19020107e94f2ceac7525864c81a0bdbb9a4338c7f5c7dc4b1ddf7d0b72063f312293595c8bda15d47b3fe0229ec9df9a62f28ceecb8b974850126a280ee3341ab01c3babc470e582a89858692eb0a8df6ecc0b108a201bca03f7d665643be102030100010282010032248898579f97303fd73839c0b54141d8d124a7ed8211e7cbf6c41270fb10f627584f161b9f504344e23ef3c4efc9e2c49840d739f4a99f2074edbc1bc7c3fa993ba7e7ab626287fae4ee3af4f9e374073be07c33795db955527a6026b32cb59033806c054055a66c933cd4df637cb4126865bd930d3a4d775a839d322b1d44546417a60f883a640d199224b83a7af949b787b6f75a7fdf7cbb9e2c6559b45e4bb711631243a4d5641918289c1a8cef61221b77dbfde93603fb845b9fcf6b27c27524ae0fb030a5acb0cc8913fb5a2de0783a84e82668a54ac1985444e02179beb30f75dc06ff9ea32164a997b9b09ad89a6d3799b4629b830a5c7573c1c38502818100eae71385659eddbc9c6d35280a4ce9c487d72c151e142d739a264b7232a2643e84c5d70eb801f4ab1ee9500e42002cf666eff60b4316e9af9de8cf9b044a822fa32023565ca68c8907b9d18eea431829494c269d1bc286ec7fe304e85a2a410bbc87174a858a6fdca9e2712b285b49fd93c4142346079d293e9058c920aeb2a70281810097d9380165a8105fe4889fc98714a1eeb5ef33efb9a7799687f4fc988d9596f43fb9f58911735cb0d845f09ba6bdd5a9fad44d227f323cec49549f70ec79508e0e3babcb984f531be0d7845fe94d1d733544a80a3c919707cfad8c655d171cfca7c99608758d3ffba0fe40271dc624f0af6a5a9f6fcf9b4b7d39140d8f229637028180174c3bdf6b28ca8d3e668673263262ad1f5bf3ff54306421a7144d3f524e50eaf2783cd034e7dcc06c1c6fd83a2b924a0e0396bf9f33d2919c73cec36d35869bfaede1135bb519132e34fbd7d4dc3ab53d93d3f099243e058ed9914f0a424e993f6596a5c980e57f594a20374b95624d482e9660b93d60150b237dead4d6fed90281810090f2d20a4b5e9d9adbcd2b32355695a9075479f048f93c105c6198498b45931e3e42a5c61cb9516ea25448f45bbb745cd8c99583eb852a30a76336fb954fcc7c7dcbaa1723a1fd046ca16d841c70f73ec5476f5cae2a8fcfee078d3029276a0d27a13f2d7e00c265d16d4211d4d312ea09986d3f2a7d339160cc7e7edef6360b028181009b608f94d5873afaaa5412702ed9e56822374e904d5e58c1c067d2e4beb8b75070d6e81a173a471c50f7199d905ff8d398358e1723109135cfb3b0057b1b97cec08fce31b1b6daa86b69790a0139ae06e29dce9021a4421f8632223c9642e9124d2dcd5e77a6a902b13950ce259d096af4c5c8f34832bf32f5197df682f7cf3d";
+        let uri = URL(string: "https://sandbox.api.mastercard.com/priceless/partner")!
+        
+        let method = "GET";
+        let payload = "Hello world!";
+
+        let certificatePath = Bundle(for: OAuth1SignerTests.self).path(forResource: "Imagine_Bank-sandbox", ofType: "p12")
+
+        let signingKey = OAuth.loadPrivateKey(fromPath: certificatePath, keyPassword: "keystorepassword")!
+        
+        let header = try? OAuth.authorizationHeader(forUri: uri, method: method, payload: payload, consumerKey: consumerKey, signingPrivateKey: signingKey)
+        debugPrint(header)
     }
 
     func testPerformanceExample() {
@@ -30,14 +41,4 @@ class OAuth1SignerTests: XCTestCase {
         }
     }
 
-}
-
-extension URL {
-    func queryParams() -> [URLQueryItem]? {
-        guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true) else {
-            return nil
-        }
-        return components.queryItems?.sorted()
-        // TODO: components.percentEncodedQueryItems instead ??
-    }
 }

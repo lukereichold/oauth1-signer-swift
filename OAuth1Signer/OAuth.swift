@@ -10,15 +10,13 @@ import Foundation
 import Security
 import CommonCrypto
 
-public struct OAuth {
-    
-    public typealias AuthorizationHeader = String
+public final class OAuth {
     
     public static func authorizationHeader(forUri uri: URL,
                                            method: String,
                                            payload: String?,
                                            consumerKey: String,
-                                           signingPrivateKey: SecKey) throws -> AuthorizationHeader {
+                                           signingPrivateKey: SecKey) throws -> String {
         
         let queryParams = uri.queryParameters()
         var oauthParams = oauthParameters(withKey: consumerKey, payload: payload)
@@ -28,11 +26,9 @@ public struct OAuth {
         
         do {
             let signature = try signSignatureBaseString(sbs: sbs, signingKey: signingPrivateKey)
-            print("signedSignature")
-            debugPrint(signature)
-            
             let encodedSignature = signature //.addingPercentEncoding(withAllowedCharacters: .)
             oauthParams["oauth_signature"] = encodedSignature
+            debugPrint(authorizationString(oauthParams: oauthParams))
             return authorizationString(oauthParams: oauthParams)
             
         } catch {
@@ -127,8 +123,55 @@ extension OAuth {
         }
         
         var allowed = CharacterSet.alphanumerics
-        allowed.insert(charactersIn: "-._~") // as per RFC 3986
+        allowed.insert(charactersIn: "-._~")
         return paramString.addingPercentEncoding(withAllowedCharacters: allowed) ?? ""
+    }
+}
+
+extension OAuth {
+    public static func loadPrivateKey(fromPath certificatePath: String?, keyPassword: String) -> SecKey? {
+        
+        guard let certificatePath = certificatePath,
+            let certificateData = NSData(contentsOfFile: certificatePath) else {
+                return nil
+        }
+        
+        var status: OSStatus
+        let options = [kSecImportExportPassphrase as String: keyPassword]
+        
+        var optItems: CFArray?
+        status = SecPKCS12Import(certificateData, options as CFDictionary, &optItems)
+        if status != errSecSuccess {
+            print("Failed loading private key - unable to import keystore.")
+            return nil
+        }
+        guard let items = optItems else { return nil }
+        
+        // Cast CFArrayRef to Swift Array
+        let itemsArray = items as [AnyObject]
+        // Cast CFDictionaryRef as Swift Dictionary
+        guard let myIdentityAndTrust = itemsArray.first as? [String : AnyObject] else {
+            return nil
+        }
+        
+        // Get our SecIdentityRef from the PKCS #12 blob
+        let outIdentity = myIdentityAndTrust[kSecImportItemIdentity as String] as! SecIdentity
+        var myReturnedCertificate: SecCertificate?
+        status = SecIdentityCopyCertificate(outIdentity, &myReturnedCertificate)
+        if status != errSecSuccess {
+            print("Failed to retrieve the certificate associated with the requested identity.")
+            return nil
+        }
+        
+        // Get the private key associated with our identity
+        var privateKey: SecKey?
+        status = SecIdentityCopyPrivateKey(outIdentity, &privateKey)
+        if status != errSecSuccess {
+            print("Failed to extract the private key from the keystore.")
+            return nil
+        }
+        
+        return privateKey
     }
 }
 
@@ -183,3 +226,4 @@ extension URL {
         return "\(scheme)://\(host)\(path)"
     }
 }
+
