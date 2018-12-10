@@ -22,16 +22,18 @@ public struct OAuth {
         
         let queryParams = uri.queryParameters()
         var oauthParams = oauthParameters(withKey: consumerKey, payload: payload)
-        
         let paramString = oauthParamString(forQueryParameters: queryParams, oauthParameters: oauthParams)
-        print("paramString")
-        debugPrint(paramString)
         
         let sbs = signatureBaseString(httpMethod: method, baseUri: uri.lowercasedBaseUrl(), paramString: paramString)
         
         // Signature
     
         let signature = signSignatureBaseString(sbs: sbs, signingKey: signingKey)
+        
+        print("signedSignature")
+        debugPrint(signature)
+        
+        
         let encodedSignature = signature //.addingPercentEncoding(withAllowedCharacters: .)
         oauthParams["oauth_signature"] = encodedSignature
         
@@ -59,13 +61,12 @@ extension OAuth {
     
     static func signatureBaseString(httpMethod: String, baseUri: String, paramString: String) -> String {
         let escapedBaseUri = baseUri.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
-        let escapedParams = paramString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         
         return httpMethod.uppercased()
         + "&"
         + escapedBaseUri
         + "&"
-        + escapedParams
+        + paramString
     }
     
     static func currentUnixTimestamp() -> String {
@@ -98,12 +99,17 @@ extension OAuth {
     
     static func oauthParamString(forQueryParameters queryParameters: UniqueParametersMap?,
                                  oauthParameters: [String: String]) -> String {
-        let allParameters = oauthParameters.reduce(into: queryParameters ?? [:]) { uniqueParams, oauthKeyPair in
-            uniqueParams[oauthKeyPair.key, default: []].insert(oauthKeyPair.value)
+        
+        var allParameters = [(key: String, values: [String])]()
+        if let queryParams = queryParameters {
+            allParameters += queryParams.sorted { $0.0 < $1.0 }.map {(key: $0.0, values: Array($0.value)) }
         }
+
+        let sortedOauthParams = oauthParameters.sorted { $0.0 < $1.0 }.map { (key: $0.key, values: [$0.value])}
+        allParameters += sortedOauthParams
         
         var paramString = allParameters.reduce(into: "") { combined, keyPair in
-            keyPair.value.sorted().forEach { value in
+            keyPair.values.sorted().forEach { value in
                 combined.append("\(keyPair.key)=\(value)&")
             }
         }
@@ -112,7 +118,9 @@ extension OAuth {
             paramString = String(paramString.dropLast())
         }
         
-        return paramString
+        var allowed = CharacterSet.alphanumerics
+        allowed.insert(charactersIn: "-._~") // as per RFC 3986
+        return paramString.addingPercentEncoding(withAllowedCharacters: allowed) ?? ""
     }
 }
 
@@ -158,18 +166,12 @@ extension URL {
             uniqueMap[queryItem.name, default: []].insert(queryItem.value ?? "")
         }
         
-        return uniqueQueryItems?.sorted()
+        return uniqueQueryItems
         // TODO: components.percentEncodedQueryItems instead ?
     }
     
     func lowercasedBaseUrl() -> String {
         guard let scheme = scheme?.lowercased(), let host = host?.lowercased() else { return "" }
         return "\(scheme)://\(host)\(path)"
-    }
-}
-
-extension Dictionary where Key == String {
-    func sorted() -> Dictionary {
-        return sorted{ $0.key < $1.key }.reduce(into: [:]) { $0[$1.0] = $1.1 }
     }
 }
