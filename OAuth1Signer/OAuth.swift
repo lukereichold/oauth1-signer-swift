@@ -21,7 +21,6 @@ public struct OAuth {
                                            signingKey: String) throws -> AuthorizationHeader {
         
         let queryParams = uri.queryParameters()
-        
         var oauthParams = oauthParameters(withKey: consumerKey, payload: payload)
         
         let paramString = oauthParamString(forQueryParameters: queryParams, oauthParameters: oauthParams)
@@ -97,13 +96,23 @@ extension OAuth {
         return oauthParams
     }
     
-    static func oauthParamString(forQueryParameters queryParameters: UrlParameterMap?,
+    static func oauthParamString(forQueryParameters queryParameters: UniqueParametersMap?,
                                  oauthParameters: [String: String]) -> String {
-        return ""
-    }
-    
-    static func getBodyHash() -> String {
-        return ""
+        let allParameters = oauthParameters.reduce(into: queryParameters ?? [:]) { uniqueParams, oauthKeyPair in
+            uniqueParams[oauthKeyPair.key, default: []].insert(oauthKeyPair.value)
+        }
+        
+        var paramString = allParameters.reduce(into: "") { combined, keyPair in
+            keyPair.value.sorted().forEach { value in
+                combined.append("\(keyPair.key)=\(value)&")
+            }
+        }
+        
+        if paramString.last! == "&" {
+            paramString = String(paramString.dropLast())
+        }
+        
+        return paramString
     }
 }
 
@@ -137,15 +146,15 @@ extension Data {
     }
 }
 
-typealias UrlParameterMap = [String: Set<String>]
+typealias UniqueParametersMap = [String: Set<String>]
 
 extension URL {
-    func queryParameters() -> UrlParameterMap? {
+    func queryParameters() -> UniqueParametersMap? {
         guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true) else {
             return nil
         }
         
-        let uniqueQueryItems = components.queryItems?.reduce(into: UrlParameterMap()) { uniqueMap, queryItem in
+        let uniqueQueryItems = components.queryItems?.reduce(into: UniqueParametersMap()) { uniqueMap, queryItem in
             uniqueMap[queryItem.name, default: []].insert(queryItem.value ?? "")
         }
         
