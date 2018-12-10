@@ -1,35 +1,29 @@
-//
-//  OAuth.swift
-//  OAuth1Signer
-//
-//  Created by Luke Reichold on 12/2/18.
-//  Copyright © 2018 Reikam Labs. All rights reserved.
-//
-
 import Foundation
 import Security
 import CommonCrypto
 
-public final class OAuth {
+public struct OAuth {
     
     public static func authorizationHeader(forUri uri: URL,
                                            method: String,
                                            payload: String?,
                                            consumerKey: String,
-                                           signingPrivateKey: SecKey) throws -> String {
+                                           signingPrivateKey: SecKey) throws -> NSString {
         
         let queryParams = uri.queryParameters()
         var oauthParams = oauthParameters(withKey: consumerKey, payload: payload)
         let paramString = oauthParamString(forQueryParameters: queryParams, oauthParameters: oauthParams)
         
         let sbs = signatureBaseString(httpMethod: method, baseUri: uri.lowercasedBaseUrl(), paramString: paramString)
+        print("SBS! ")
+        print(NSString(string: sbs))
         
         do {
             let signature = try signSignatureBaseString(sbs: sbs, signingKey: signingPrivateKey)
-            let encodedSignature = signature //.addingPercentEncoding(withAllowedCharacters: .)
-            oauthParams["oauth_signature"] = encodedSignature
-            debugPrint(authorizationString(oauthParams: oauthParams))
-            return authorizationString(oauthParams: oauthParams)
+            oauthParams["oauth_signature"] = signature
+            let authString = NSString(string: authorizationString(oauthParams: oauthParams))
+            debugPrint(authString) // testing
+            return authString
             
         } catch {
             throw error.localizedDescription
