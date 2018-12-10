@@ -26,12 +26,11 @@ class OAuth1SignerTests: XCTestCase {
         let payloadJSON = (try? JSONSerialization.data(withJSONObject: payload, options: [])) ?? Data()
         let payloadString = String(data: payloadJSON, encoding: .utf8)
 
-        
         let header = try? OAuth.authorizationHeader(forUri: uri, method: method, payload: payloadString, consumerKey: consumerKey, signingPrivateKey: getPrivateKey())
         
 
         let headers: HTTPHeaders = [
-            "Authorization": header! as String,
+            "Authorization": header!,
             "Accept": "application/json",
             "Referer": "api.mastercard.com"
         ]

@@ -8,21 +8,18 @@ public struct OAuth {
                                            method: String,
                                            payload: String?,
                                            consumerKey: String,
-                                           signingPrivateKey: SecKey) throws -> NSString {
+                                           signingPrivateKey: SecKey) throws -> String {
         
         let queryParams = uri.queryParameters()
         var oauthParams = oauthParameters(withKey: consumerKey, payload: payload)
         let paramString = oauthParamString(forQueryParameters: queryParams, oauthParameters: oauthParams)
         
         let sbs = signatureBaseString(httpMethod: method, baseUri: uri.lowercasedBaseUrl(), paramString: paramString)
-        print("SBS! ")
-        print(NSString(string: sbs))
         
         do {
-            let signature = try signSignatureBaseString(sbs: sbs, signingKey: signingPrivateKey)
+            let signature = try signSignatureBaseString(sbs: sbs, signingKey: signingPrivateKey).addingPercentEncoding(withAllowedCharacters: .alphanumerics)
             oauthParams["oauth_signature"] = signature
-            let authString = NSString(string: authorizationString(oauthParams: oauthParams))
-            debugPrint(authString) // testing
+            let authString = authorizationString(oauthParams: oauthParams)
             return authString
             
         } catch {
@@ -45,7 +42,7 @@ extension OAuth {
             throw error!.takeRetainedValue() as Error
         }
         
-        let signature = (signedData as Data).base64EncodedString() // TODO: Can I cast to Data like this?
+        let signature = (signedData as Data).base64EncodedString()
         return signature
     }
     
@@ -212,7 +209,6 @@ extension URL {
         }
         
         return uniqueQueryItems
-        // TODO: components.percentEncodedQueryItems instead ?
     }
     
     func lowercasedBaseUrl() -> String {
