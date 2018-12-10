@@ -57,7 +57,7 @@ extension OAuth {
     
     static func authorizationString(oauthParams: [String: String]) -> String {
         var header = "OAuth "
-        for (key, value) in oauthParams {
+        for (key, value) in oauthParams.sorted(by: {$0.0 < $1.0}) {
             header.append("\(key)=\"\(value)\",")
         }
         return String(header.dropLast())
