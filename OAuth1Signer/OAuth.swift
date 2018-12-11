@@ -82,9 +82,9 @@ extension OAuth {
     static func oauthParameters(withKey consumerKey: String, payload: String?) -> [String: String] {
         var oauthParams = [String: String]()
         if payload != nil {
-            oauthParams["oauth_body_hash"] = payload?.sha256() ?? ""
+            oauthParams["oauth_body_hash"] = payload?.sha256()?.base64String() ?? ""
         }
-        oauthParams["oauth_consumer_key"] = consumerKey
+        oauthParams["oauth_consumer_key"] = consumerKey.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
         oauthParams["oauth_nonce"] = nonce()
         oauthParams["oauth_signature_method"] = "RSA-SHA256"
         oauthParams["oauth_timestamp"] = currentUnixTimestamp()
@@ -175,7 +175,12 @@ extension String {
         return String(self[i] as Character)
     }
     
-    func sha256() -> String? {
+    func sha256() -> Data? {
+        guard let data = data(using: String.Encoding.utf8) else { return nil }
+        return data.sha256()
+    }
+    
+    func sha256_asHex() -> String? {
         guard
             let data = data(using: String.Encoding.utf8),
             let shaData = data.sha256()
@@ -193,6 +198,14 @@ extension Data {
         guard let res = NSMutableData(length: Int(CC_SHA256_DIGEST_LENGTH)) else { return nil }
         CC_SHA256((self as NSData).bytes, CC_LONG(self.count), res.mutableBytes.assumingMemoryBound(to: UInt8.self))
         return res as Data
+    }
+    
+    func base64String() -> String {
+        return base64EncodedString(options: [])
+    }
+    
+    func hexString() -> String {
+        return map { String(format: "%02hhx", $0) }.joined()
     }
 }
 
