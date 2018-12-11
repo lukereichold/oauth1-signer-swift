@@ -4,7 +4,7 @@ import CommonCrypto
 
 public struct OAuth {
     
-    public static func authorizationHeader(forUri uri: URL,
+    static func authorizationHeader(forUri uri: URL,
                                            method: String,
                                            payload: String?,
                                            consumerKey: String,
@@ -28,7 +28,7 @@ public struct OAuth {
     }
 }
 
-extension OAuth {
+private extension OAuth {
     
     static func signSignatureBaseString(sbs: String, signingKey: SecKey) throws -> String {
         
@@ -62,10 +62,6 @@ extension OAuth {
         + escapedBaseUri
         + "&"
         + paramString
-    }
-    
-    static func currentUnixTimestamp() -> String {
-        return String(Int(Date().timeIntervalSince1970))
     }
     
     static func nonce() -> String {
@@ -117,116 +113,8 @@ extension OAuth {
         allowed.insert(charactersIn: "-._~")
         return paramString.addingPercentEncoding(withAllowedCharacters: allowed) ?? ""
     }
-}
-
-extension OAuth {
-    public static func loadPrivateKey(fromPath certificatePath: String?, keyPassword: String) -> SecKey? {
-        
-        guard let certificatePath = certificatePath,
-            let certificateData = NSData(contentsOfFile: certificatePath) else {
-                return nil
-        }
-        
-        var status: OSStatus
-        let options = [kSecImportExportPassphrase as String: keyPassword]
-        
-        var optItems: CFArray?
-        status = SecPKCS12Import(certificateData, options as CFDictionary, &optItems)
-        if status != errSecSuccess {
-            print("Failed loading private key - unable to import keystore.")
-            return nil
-        }
-        guard let items = optItems else { return nil }
-        
-        // Cast CFArrayRef to Swift Array
-        let itemsArray = items as [AnyObject]
-        // Cast CFDictionaryRef as Swift Dictionary
-        guard let myIdentityAndTrust = itemsArray.first as? [String : AnyObject] else {
-            return nil
-        }
-        
-        // Get our SecIdentityRef from the PKCS #12 blob
-        let outIdentity = myIdentityAndTrust[kSecImportItemIdentity as String] as! SecIdentity
-        var myReturnedCertificate: SecCertificate?
-        status = SecIdentityCopyCertificate(outIdentity, &myReturnedCertificate)
-        if status != errSecSuccess {
-            print("Failed to retrieve the certificate associated with the requested identity.")
-            return nil
-        }
-        
-        // Get the private key associated with our identity
-        var privateKey: SecKey?
-        status = SecIdentityCopyPrivateKey(outIdentity, &privateKey)
-        if status != errSecSuccess {
-            print("Failed to extract the private key from the keystore.")
-            return nil
-        }
-        
-        return privateKey
+    
+    static func currentUnixTimestamp() -> String {
+        return String(Int(Date().timeIntervalSince1970))
     }
 }
-
-extension String {
-    subscript (i: Int) -> Character {
-        return self[index(startIndex, offsetBy: i)]
-    }
-    
-    subscript (i: Int) -> String {
-        return String(self[i] as Character)
-    }
-    
-    func sha256() -> Data? {
-        guard let data = data(using: String.Encoding.utf8) else { return nil }
-        return data.sha256()
-    }
-    
-    func sha256_asHex() -> String? {
-        guard
-            let data = data(using: String.Encoding.utf8),
-            let shaData = data.sha256()
-            else { return nil }
-        let rc = shaData.base64EncodedString(options: [])
-        return rc
-    }
-    
-}
-
-extension String: Error {}
-
-extension Data {
-    func sha256() -> Data? {
-        guard let res = NSMutableData(length: Int(CC_SHA256_DIGEST_LENGTH)) else { return nil }
-        CC_SHA256((self as NSData).bytes, CC_LONG(self.count), res.mutableBytes.assumingMemoryBound(to: UInt8.self))
-        return res as Data
-    }
-    
-    func base64String() -> String {
-        return base64EncodedString(options: [])
-    }
-    
-    func hexString() -> String {
-        return map { String(format: "%02hhx", $0) }.joined()
-    }
-}
-
-typealias UniqueParametersMap = [String: Set<String>]
-
-extension URL {
-    func queryParameters() -> UniqueParametersMap? {
-        guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true) else {
-            return nil
-        }
-        
-        let uniqueQueryItems = components.queryItems?.reduce(into: UniqueParametersMap()) { uniqueMap, queryItem in
-            uniqueMap[queryItem.name, default: []].insert(queryItem.value ?? "")
-        }
-        
-        return uniqueQueryItems
-    }
-    
-    func lowercasedBaseUrl() -> String {
-        guard let scheme = scheme?.lowercased(), let host = host?.lowercased() else { return "" }
-        return "\(scheme)://\(host)\(path)"
-    }
-}
-

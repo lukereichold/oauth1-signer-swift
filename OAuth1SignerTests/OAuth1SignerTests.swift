@@ -13,7 +13,7 @@ class OAuth1SignerTests: XCTestCase {
         let ***REMOVED*** = ***REMOVED*** // ***REMOVED***
         let apiSecretKey = "***REMOVED***" // ***REMOVED***
         
-        let timestamp = OAuth.currentUnixTimestamp()
+        let timestamp = currentUnixTimestamp()
         let rawSignature = timestamp + "_" + String(***REMOVED***) + "_" + apiSecretKey
         let signatureString = rawSignature.sha256()?.hexString() ?? ""
             
@@ -62,14 +62,17 @@ class OAuth1SignerTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
     
-    // TODO: provide this to consumers in a Utilities class?
     private func getPrivateKey() -> SecKey {
         let certificatePath = Bundle(for: OAuth1SignerTests.self).path(forResource: "***REMOVED***", ofType: "p12")
         
-        let signingKey = OAuth.loadPrivateKey(fromPath: certificatePath, keyPassword: "***REMOVED***")!
+        let signingKey = KeyProvider.loadPrivateKey(fromPath: certificatePath!, keyPassword: "***REMOVED***")!
         return signingKey
     }
 
+    func currentUnixTimestamp() -> String {
+        return String(Int(Date().timeIntervalSince1970))
+    }
+    
 }
 
 public extension URLRequest {
