@@ -4,7 +4,7 @@ import CommonCrypto
 
 public struct OAuth {
     
-    static func authorizationHeader(forUri uri: URL,
+    public static func authorizationHeader(forUri uri: URL,
                                            method: String,
                                            payload: String?,
                                            consumerKey: String,
@@ -17,10 +17,9 @@ public struct OAuth {
         let sbs = signatureBaseString(httpMethod: method, baseUri: uri.lowercasedBaseUrl(), paramString: paramString)
         
         do {
-            let signature = try signSignatureBaseString(sbs: sbs, signingKey: signingPrivateKey).addingPercentEncoding(withAllowedCharacters: .alphanumerics)
+            let signature = try signSignatureBaseString(sbs: sbs, signingKey: signingPrivateKey)
             oauthParams["oauth_signature"] = signature
-            let authString = authorizationString(oauthParams: oauthParams)
-            return authString
+            return authorizationString(oauthParams: oauthParams)
             
         } catch {
             throw error.localizedDescription
@@ -43,7 +42,7 @@ private extension OAuth {
         }
         
         let signature = (signedData as Data).base64EncodedString()
-        return signature
+        return signature.addingPercentEncoding(withAllowedCharacters: .alphanumerics) ?? ""
     }
     
     static func authorizationString(oauthParams: [String: String]) -> String {
@@ -58,17 +57,17 @@ private extension OAuth {
         let escapedBaseUri = baseUri.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
         
         return httpMethod.uppercased()
-        + "&"
-        + escapedBaseUri
-        + "&"
-        + paramString
+            + "&"
+            + escapedBaseUri
+            + "&"
+            + paramString
     }
     
     static func nonce() -> String {
         let bytesCount = 8
         var randomBytes = [UInt8](repeating: 0, count: bytesCount)
         _ = SecRandomCopyBytes(kSecRandomDefault, bytesCount, &randomBytes)
-
+        
         let validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         return randomBytes.map { randomByte in
             return validChars[Int(randomByte % UInt8(validChars.count))]
@@ -95,7 +94,7 @@ private extension OAuth {
         if let queryParams = queryParameters {
             allParameters += queryParams.sorted { $0.0 < $1.0 }.map {(key: $0.0, values: Array($0.value)) }
         }
-
+        
         let sortedOauthParams = oauthParameters.sorted { $0.0 < $1.0 }.map { (key: $0.key, values: [$0.value])}
         allParameters += sortedOauthParams
         
