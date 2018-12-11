@@ -1,6 +1,6 @@
 import Foundation
 
-struct KeyProvider {
+public struct KeyProvider {
     
     public static func loadPrivateKey(fromPath certificatePath: String, keyPassword: String) -> SecKey? {
         
