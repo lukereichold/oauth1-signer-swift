@@ -14,6 +14,10 @@
 		C314EF7521B35806002E0A53 /* OAuth1Signer.h in Headers */ = {isa = PBXBuildFile; fileRef = C314EF6721B35806002E0A53 /* OAuth1Signer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C314EF7F21B4AFB1002E0A53 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314EF7E21B4AFB1002E0A53 /* OAuth.swift */; };
 		C369334621BE39FB00FA4B18 /* Imagine_Bank-sandbox.p12 in Resources */ = {isa = PBXBuildFile; fileRef = C369334421BE381500FA4B18 /* Imagine_Bank-sandbox.p12 */; };
+		C369334921C02A9800FA4B18 /* String+OAuth1Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369334821C02A9800FA4B18 /* String+OAuth1Signer.swift */; };
+		C369334B21C02ACC00FA4B18 /* Data+OAuth1Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369334A21C02ACC00FA4B18 /* Data+OAuth1Signer.swift */; };
+		C369334D21C02B1800FA4B18 /* URL+OAuth1Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369334C21C02B1800FA4B18 /* URL+OAuth1Signer.swift */; };
+		C369334F21C02CF000FA4B18 /* KeyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C369334E21C02CF000FA4B18 /* KeyProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		C314EF7421B35806002E0A53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C314EF7E21B4AFB1002E0A53 /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 		C369334421BE381500FA4B18 /* Imagine_Bank-sandbox.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Imagine_Bank-sandbox.p12"; sourceTree = "<group>"; };
+		C369334821C02A9800FA4B18 /* String+OAuth1Signer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+OAuth1Signer.swift"; sourceTree = "<group>"; };
+		C369334A21C02ACC00FA4B18 /* Data+OAuth1Signer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+OAuth1Signer.swift"; sourceTree = "<group>"; };
+		C369334C21C02B1800FA4B18 /* URL+OAuth1Signer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+OAuth1Signer.swift"; sourceTree = "<group>"; };
+		C369334E21C02CF000FA4B18 /* KeyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyProvider.swift; sourceTree = "<group>"; };
 		C74E027D4AF500D598C955B9 /* Pods-OAuth1Signer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAuth1Signer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OAuth1Signer/Pods-OAuth1Signer.debug.xcconfig"; sourceTree = "<group>"; };
 		EE0CB88EC3FE683836C54E9B /* Pods_OAuth1SignerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OAuth1SignerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F94EAF52ACA1D14DE51DB08D /* Pods-OAuth1SignerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OAuth1SignerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OAuth1SignerTests/Pods-OAuth1SignerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +108,8 @@
 			children = (
 				C314EF6721B35806002E0A53 /* OAuth1Signer.h */,
 				C314EF7E21B4AFB1002E0A53 /* OAuth.swift */,
+				C369334E21C02CF000FA4B18 /* KeyProvider.swift */,
+				C369334721C02A6D00FA4B18 /* Extensions */,
 				C314EF6821B35806002E0A53 /* Info.plist */,
 			);
 			path = OAuth1Signer;
@@ -113,6 +123,16 @@
 				C314EF7421B35806002E0A53 /* Info.plist */,
 			);
 			path = OAuth1SignerTests;
+			sourceTree = "<group>";
+		};
+		C369334721C02A6D00FA4B18 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C369334821C02A9800FA4B18 /* String+OAuth1Signer.swift */,
+				C369334A21C02ACC00FA4B18 /* Data+OAuth1Signer.swift */,
+				C369334C21C02B1800FA4B18 /* URL+OAuth1Signer.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		EAC6C5B29989FEB4902C2630 /* Frameworks */ = {
@@ -306,6 +326,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C369334921C02A9800FA4B18 /* String+OAuth1Signer.swift in Sources */,
+				C369334D21C02B1800FA4B18 /* URL+OAuth1Signer.swift in Sources */,
+				C369334B21C02ACC00FA4B18 /* Data+OAuth1Signer.swift in Sources */,
+				C369334F21C02CF000FA4B18 /* KeyProvider.swift in Sources */,
 				C314EF7F21B4AFB1002E0A53 /* OAuth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

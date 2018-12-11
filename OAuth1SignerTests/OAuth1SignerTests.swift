@@ -13,7 +13,7 @@ class OAuth1SignerTests: XCTestCase {
         let partnerId = 403 // Priceless Cities
         let apiSecretKey = "mbhhBngBJrEjEJijKUvM5Tti4jwsgpIz" // Priceless Cities
         
-        let timestamp = OAuth.currentUnixTimestamp()
+        let timestamp = currentUnixTimestamp()
         let rawSignature = timestamp + "_" + String(partnerId) + "_" + apiSecretKey
         let signatureString = rawSignature.sha256()?.hexString() ?? ""
             
@@ -62,14 +62,17 @@ class OAuth1SignerTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
     
-    // TODO: provide this to consumers in a Utilities class?
     private func getPrivateKey() -> SecKey {
         let certificatePath = Bundle(for: OAuth1SignerTests.self).path(forResource: "Imagine_Bank-sandbox", ofType: "p12")
         
-        let signingKey = OAuth.loadPrivateKey(fromPath: certificatePath, keyPassword: "keystorepassword")!
+        let signingKey = KeyProvider.loadPrivateKey(fromPath: certificatePath!, keyPassword: "keystorepassword")!
         return signingKey
     }
 
+    func currentUnixTimestamp() -> String {
+        return String(Int(Date().timeIntervalSince1970))
+    }
+    
 }
 
 public extension URLRequest {
