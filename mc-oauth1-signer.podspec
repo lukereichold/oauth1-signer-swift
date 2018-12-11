@@ -12,7 +12,7 @@ Zero dependency library for generating a Mastercard API compliant OAuth signatur
   s.homepage         = 'https://github.com/lukereichold/oauth1-signer-swift'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'git' => 'luke@reikam.com' }
-  s.source           = { :git => 'https://github.com/lukereichold/oauth1-signer-swift.git', :tag => s.version.to_s }
+  s.source           = { :git => 'git@github.com:lukereichold/oauth1-signer-swift.git', :tag => s.version.to_s }
   s.swift_version    = '4.2'
   s.ios.deployment_target = '11.0'
 
