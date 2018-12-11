@@ -1,6 +1,0 @@
-framework module Pods_OAuth1SignerTests {
-  umbrella header "Pods-OAuth1SignerTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

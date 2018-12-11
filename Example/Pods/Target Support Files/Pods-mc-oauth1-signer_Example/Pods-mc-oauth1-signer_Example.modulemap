@@ -1,0 +1,6 @@
+framework module Pods_mc_oauth1_signer_Example {
+  umbrella header "Pods-mc-oauth1-signer_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

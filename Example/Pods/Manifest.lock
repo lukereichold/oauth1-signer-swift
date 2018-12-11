@@ -1,0 +1,16 @@
+PODS:
+  - mc-oauth1-signer (0.2.0)
+
+DEPENDENCIES:
+  - mc-oauth1-signer (from `../`)
+
+EXTERNAL SOURCES:
+  mc-oauth1-signer:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  mc-oauth1-signer: 3be41e0c7f6fd3cca21cd8d9efb1542f91fd13c5
+
+PODFILE CHECKSUM: 414635f77dfb0d16b36c25d3bde49271f53de4d5
+
+COCOAPODS: 1.5.3
