@@ -1,0 +1,807 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		184B12E7703573D289B138CB24A38FCE /* KeyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721AF16E34205FAF5A4B0CD07DF2F546 /* KeyProvider.swift */; };
+		254A74AA5F14089D32F651390D2732C9 /* mc-oauth1-signer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C6D96F7BBBB618CA2DFFD5E7952DEA9 /* mc-oauth1-signer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B4C02D84790A06ED4FFF6422C17485E /* Pods-mc-oauth1-signer_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F68A6B383AF739C54F458545034243D /* Pods-mc-oauth1-signer_Tests-dummy.m */; };
+		31CA280B52C844D35270EE76B6E770AA /* Pods-mc-oauth1-signer_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2D0373A14D59D4CE760D0FBA09A173 /* Pods-mc-oauth1-signer_Example-dummy.m */; };
+		5DE0EAA289313D7200D3A2A0FCFC32F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDC2E512ACD5CB722F7ADF14560309F /* Foundation.framework */; };
+		771466D9F96887E120D62A8278A6BF5B /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B4B73E42C507D91D09D662D499C490 /* OAuth.swift */; };
+		A8EB25067B8C59D0E6924F8A669C59FA /* URL+OAuth1Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A6992BC1D9BD03DBA99C3BA13D83D /* URL+OAuth1Signer.swift */; };
+		BA333F90813208AEA134FB7A32EFBD8A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7570261E6ACC7105B21202B26AE43D97 /* Security.framework */; };
+		BCA54C81772F7309AF178857D53B72F3 /* mc-oauth1-signer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC5740F852FA0420340B5B819549203 /* mc-oauth1-signer-dummy.m */; };
+		C9861D7A432CA3CA1D0B6CF59A7337F3 /* String+OAuth1Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839EFC9501A089961F824B8059F57F85 /* String+OAuth1Signer.swift */; };
+		D09CF2F15AC9A9864FA1002FA8D70C53 /* Pods-mc-oauth1-signer_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ECCB7A142AD095C44D1DD04B1902397 /* Pods-mc-oauth1-signer_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1D38A2BD64885315F7467E585A7E09B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDC2E512ACD5CB722F7ADF14560309F /* Foundation.framework */; };
+		DCB0C0C85FB3BF200AE2EBCDC75C6126 /* Data+OAuth1Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD5C1BA180C549A3BBBBAE3E5B20DC /* Data+OAuth1Signer.swift */; };
+		E0A4D39305B8ED10906522B33DDC3513 /* Pods-mc-oauth1-signer_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9665ABA386F0474CF3FAEE2B1AECE0DD /* Pods-mc-oauth1-signer_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAB19BF4BA1D69C6E5F418993DF4EF1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDC2E512ACD5CB722F7ADF14560309F /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D48FA904B43E531FE1AC419D664F9B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FEBC2D60F73D325FA771F5CD6B64621;
+			remoteInfo = "Pods-mc-oauth1-signer_Example";
+		};
+		F379066C06EE6274D702A093704652BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA1F6517F0C390D47374BE3C8C9B84D2;
+			remoteInfo = "mc-oauth1-signer";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		022D16238A4A265EF2D9D98982A8D260 /* Pods_mc_oauth1_signer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_mc_oauth1_signer_Tests.framework; path = "Pods-mc-oauth1-signer_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B4B73E42C507D91D09D662D499C490 /* OAuth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuth.swift; path = "mc-oauth1-signer/Classes/OAuth.swift"; sourceTree = "<group>"; };
+		0A25EC847B93AF1E519B25CC23C8E637 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		0FF397685546150BA84DF31DBE103C6A /* mc-oauth1-signer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "mc-oauth1-signer-prefix.pch"; sourceTree = "<group>"; };
+		13095FF31E3E8FFA799583D22AA04EA2 /* Pods-mc-oauth1-signer_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mc-oauth1-signer_Example-resources.sh"; sourceTree = "<group>"; };
+		2415BED147CF73EACCC550D3D76177B5 /* mc-oauth1-signer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "mc-oauth1-signer.xcconfig"; sourceTree = "<group>"; };
+		2ADB02B6D7D3B4447E01ED8F1F2DB800 /* Pods-mc-oauth1-signer_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mc-oauth1-signer_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		2EC5740F852FA0420340B5B819549203 /* mc-oauth1-signer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "mc-oauth1-signer-dummy.m"; sourceTree = "<group>"; };
+		332951EF89FF3D6219058093056DE052 /* Pods-mc-oauth1-signer_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mc-oauth1-signer_Tests-resources.sh"; sourceTree = "<group>"; };
+		38F70658EFC02072091BD21F65681D53 /* Pods-mc-oauth1-signer_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-mc-oauth1-signer_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		490064BEA07F4C6D6F63054B395629F6 /* Pods-mc-oauth1-signer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mc-oauth1-signer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		5ECCB7A142AD095C44D1DD04B1902397 /* Pods-mc-oauth1-signer_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-mc-oauth1-signer_Tests-umbrella.h"; sourceTree = "<group>"; };
+		5F68A6B383AF739C54F458545034243D /* Pods-mc-oauth1-signer_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mc-oauth1-signer_Tests-dummy.m"; sourceTree = "<group>"; };
+		64E6C7A2BA16876586A298707CC359CB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71564EB039A6B7084E14E1A3E94C2254 /* Pods-mc-oauth1-signer_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mc-oauth1-signer_Example-frameworks.sh"; sourceTree = "<group>"; };
+		721AF16E34205FAF5A4B0CD07DF2F546 /* KeyProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyProvider.swift; path = "mc-oauth1-signer/Classes/KeyProvider.swift"; sourceTree = "<group>"; };
+		7570261E6ACC7105B21202B26AE43D97 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		7ADA25C6C2C5B49FD22B25E0438C9A6B /* Pods-mc-oauth1-signer_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-mc-oauth1-signer_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7B68F1E1B0FB552D14428F9559E53323 /* Pods-mc-oauth1-signer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mc-oauth1-signer_Example.release.xcconfig"; sourceTree = "<group>"; };
+		7C6D96F7BBBB618CA2DFFD5E7952DEA9 /* mc-oauth1-signer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "mc-oauth1-signer-umbrella.h"; sourceTree = "<group>"; };
+		835314FEFFA9E5A3AA62BF06575E4E0D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		839EFC9501A089961F824B8059F57F85 /* String+OAuth1Signer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+OAuth1Signer.swift"; path = "mc-oauth1-signer/Classes/String+OAuth1Signer.swift"; sourceTree = "<group>"; };
+		8C2D0373A14D59D4CE760D0FBA09A173 /* Pods-mc-oauth1-signer_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mc-oauth1-signer_Example-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		963EB50689475C6283AAB56449D5C288 /* Pods_mc_oauth1_signer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_mc_oauth1_signer_Example.framework; path = "Pods-mc-oauth1-signer_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9665ABA386F0474CF3FAEE2B1AECE0DD /* Pods-mc-oauth1-signer_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-mc-oauth1-signer_Example-umbrella.h"; sourceTree = "<group>"; };
+		9B6B79F604FE7947E1D28B6B89429E21 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		A84978741F37259C7C0E32808451030C /* Pods-mc-oauth1-signer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mc-oauth1-signer_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A970BFB629094F05A3072F7F8019B673 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABBD65B081A79544FD1FD09C83F3D1EB /* Pods-mc-oauth1-signer_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-mc-oauth1-signer_Tests.modulemap"; sourceTree = "<group>"; };
+		B3DD5C1BA180C549A3BBBBAE3E5B20DC /* Data+OAuth1Signer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+OAuth1Signer.swift"; path = "mc-oauth1-signer/Classes/Data+OAuth1Signer.swift"; sourceTree = "<group>"; };
+		C2990BB9C17A9CC9BB768FDF986F3289 /* Pods-mc-oauth1-signer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-mc-oauth1-signer_Example.modulemap"; sourceTree = "<group>"; };
+		C562483E4EC6FF6B2A9B5623EECFCC67 /* Pods-mc-oauth1-signer_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mc-oauth1-signer_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		CEDC2E512ACD5CB722F7ADF14560309F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CF0F4C066818C703F1F443703887372C /* mc-oauth1-signer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = "mc-oauth1-signer.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D0D18A26C5D70779B0B713ECDFB21254 /* mc-oauth1-signer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "mc-oauth1-signer.modulemap"; sourceTree = "<group>"; };
+		D5299FAADFFC5696525EA6301D732B63 /* mc_oauth1_signer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = mc_oauth1_signer.framework; path = "mc-oauth1-signer.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E00A6992BC1D9BD03DBA99C3BA13D83D /* URL+OAuth1Signer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+OAuth1Signer.swift"; path = "mc-oauth1-signer/Classes/URL+OAuth1Signer.swift"; sourceTree = "<group>"; };
+		E6EDC1CCEB098242B8E35974D59104DC /* Pods-mc-oauth1-signer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mc-oauth1-signer_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		FF74956C3DE8DD4866BF45CD8224F2AF /* Pods-mc-oauth1-signer_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mc-oauth1-signer_Tests-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		202229CB61DCFFEA139D05E2D5A2B5B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1D38A2BD64885315F7467E585A7E09B /* Foundation.framework in Frameworks */,
+				BA333F90813208AEA134FB7A32EFBD8A /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BBE014F56E662A4AB23B16459D40FBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DE0EAA289313D7200D3A2A0FCFC32F7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDEE8230EDC9D76989C366632791C6A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAB19BF4BA1D69C6E5F418993DF4EF1C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		067AF5A749ECED53BE75294B8DECD313 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5299FAADFFC5696525EA6301D732B63 /* mc_oauth1_signer.framework */,
+				963EB50689475C6283AAB56449D5C288 /* Pods_mc_oauth1_signer_Example.framework */,
+				022D16238A4A265EF2D9D98982A8D260 /* Pods_mc_oauth1_signer_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		084B6F7D5EB97EC2A6E44028C37B88AD /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE556D78CB1A3666DF0AED8DB9F14307 /* Pods-mc-oauth1-signer_Example */,
+				AE5342A6D1A9BAA836243923DC4E0E83 /* Pods-mc-oauth1-signer_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		230638C2A24513A74F47542229D6A5F1 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F95A85C6FC9D76B1FEBB5B73FAB8032A /* mc-oauth1-signer */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		28A4363CD0ED10DCB399C0DE9DE32EC0 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				9B6B79F604FE7947E1D28B6B89429E21 /* LICENSE */,
+				CF0F4C066818C703F1F443703887372C /* mc-oauth1-signer.podspec */,
+				0A25EC847B93AF1E519B25CC23C8E637 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				547FE7BE59B73C045A10943A669A2D8C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		547FE7BE59B73C045A10943A669A2D8C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEDC2E512ACD5CB722F7ADF14560309F /* Foundation.framework */,
+				7570261E6ACC7105B21202B26AE43D97 /* Security.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		73A4F58A7CD6AEBBE9D6ED563082BD5C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				64E6C7A2BA16876586A298707CC359CB /* Info.plist */,
+				D0D18A26C5D70779B0B713ECDFB21254 /* mc-oauth1-signer.modulemap */,
+				2415BED147CF73EACCC550D3D76177B5 /* mc-oauth1-signer.xcconfig */,
+				2EC5740F852FA0420340B5B819549203 /* mc-oauth1-signer-dummy.m */,
+				0FF397685546150BA84DF31DBE103C6A /* mc-oauth1-signer-prefix.pch */,
+				7C6D96F7BBBB618CA2DFFD5E7952DEA9 /* mc-oauth1-signer-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/mc-oauth1-signer";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				230638C2A24513A74F47542229D6A5F1 /* Development Pods */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				067AF5A749ECED53BE75294B8DECD313 /* Products */,
+				084B6F7D5EB97EC2A6E44028C37B88AD /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		AE5342A6D1A9BAA836243923DC4E0E83 /* Pods-mc-oauth1-signer_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				835314FEFFA9E5A3AA62BF06575E4E0D /* Info.plist */,
+				ABBD65B081A79544FD1FD09C83F3D1EB /* Pods-mc-oauth1-signer_Tests.modulemap */,
+				7ADA25C6C2C5B49FD22B25E0438C9A6B /* Pods-mc-oauth1-signer_Tests-acknowledgements.markdown */,
+				C562483E4EC6FF6B2A9B5623EECFCC67 /* Pods-mc-oauth1-signer_Tests-acknowledgements.plist */,
+				5F68A6B383AF739C54F458545034243D /* Pods-mc-oauth1-signer_Tests-dummy.m */,
+				FF74956C3DE8DD4866BF45CD8224F2AF /* Pods-mc-oauth1-signer_Tests-frameworks.sh */,
+				332951EF89FF3D6219058093056DE052 /* Pods-mc-oauth1-signer_Tests-resources.sh */,
+				5ECCB7A142AD095C44D1DD04B1902397 /* Pods-mc-oauth1-signer_Tests-umbrella.h */,
+				490064BEA07F4C6D6F63054B395629F6 /* Pods-mc-oauth1-signer_Tests.debug.xcconfig */,
+				A84978741F37259C7C0E32808451030C /* Pods-mc-oauth1-signer_Tests.release.xcconfig */,
+			);
+			name = "Pods-mc-oauth1-signer_Tests";
+			path = "Target Support Files/Pods-mc-oauth1-signer_Tests";
+			sourceTree = "<group>";
+		};
+		AE556D78CB1A3666DF0AED8DB9F14307 /* Pods-mc-oauth1-signer_Example */ = {
+			isa = PBXGroup;
+			children = (
+				A970BFB629094F05A3072F7F8019B673 /* Info.plist */,
+				C2990BB9C17A9CC9BB768FDF986F3289 /* Pods-mc-oauth1-signer_Example.modulemap */,
+				38F70658EFC02072091BD21F65681D53 /* Pods-mc-oauth1-signer_Example-acknowledgements.markdown */,
+				2ADB02B6D7D3B4447E01ED8F1F2DB800 /* Pods-mc-oauth1-signer_Example-acknowledgements.plist */,
+				8C2D0373A14D59D4CE760D0FBA09A173 /* Pods-mc-oauth1-signer_Example-dummy.m */,
+				71564EB039A6B7084E14E1A3E94C2254 /* Pods-mc-oauth1-signer_Example-frameworks.sh */,
+				13095FF31E3E8FFA799583D22AA04EA2 /* Pods-mc-oauth1-signer_Example-resources.sh */,
+				9665ABA386F0474CF3FAEE2B1AECE0DD /* Pods-mc-oauth1-signer_Example-umbrella.h */,
+				E6EDC1CCEB098242B8E35974D59104DC /* Pods-mc-oauth1-signer_Example.debug.xcconfig */,
+				7B68F1E1B0FB552D14428F9559E53323 /* Pods-mc-oauth1-signer_Example.release.xcconfig */,
+			);
+			name = "Pods-mc-oauth1-signer_Example";
+			path = "Target Support Files/Pods-mc-oauth1-signer_Example";
+			sourceTree = "<group>";
+		};
+		F95A85C6FC9D76B1FEBB5B73FAB8032A /* mc-oauth1-signer */ = {
+			isa = PBXGroup;
+			children = (
+				B3DD5C1BA180C549A3BBBBAE3E5B20DC /* Data+OAuth1Signer.swift */,
+				721AF16E34205FAF5A4B0CD07DF2F546 /* KeyProvider.swift */,
+				04B4B73E42C507D91D09D662D499C490 /* OAuth.swift */,
+				839EFC9501A089961F824B8059F57F85 /* String+OAuth1Signer.swift */,
+				E00A6992BC1D9BD03DBA99C3BA13D83D /* URL+OAuth1Signer.swift */,
+				28A4363CD0ED10DCB399C0DE9DE32EC0 /* Pod */,
+				73A4F58A7CD6AEBBE9D6ED563082BD5C /* Support Files */,
+			);
+			name = "mc-oauth1-signer";
+			path = ../..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4C2538D86CE78772EDC83B758AEA712E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0A4D39305B8ED10906522B33DDC3513 /* Pods-mc-oauth1-signer_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72EF4A6A87F6F6CE177212B62EC5CDE7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D09CF2F15AC9A9864FA1002FA8D70C53 /* Pods-mc-oauth1-signer_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCD55C120373E1DCD237727D0A74297A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				254A74AA5F14089D32F651390D2732C9 /* mc-oauth1-signer-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2FEBC2D60F73D325FA771F5CD6B64621 /* Pods-mc-oauth1-signer_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D512B9E10C920CE0F9427E289FAD775F /* Build configuration list for PBXNativeTarget "Pods-mc-oauth1-signer_Example" */;
+			buildPhases = (
+				4C2538D86CE78772EDC83B758AEA712E /* Headers */,
+				C36CC27B6F7D072D0A60A8C7FD6B3303 /* Sources */,
+				BDEE8230EDC9D76989C366632791C6A7 /* Frameworks */,
+				DFBD598D62D82ADA78E5F89ED4E975CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADA140AE48CDA7EEF432E2821B7B91EF /* PBXTargetDependency */,
+			);
+			name = "Pods-mc-oauth1-signer_Example";
+			productName = "Pods-mc-oauth1-signer_Example";
+			productReference = 963EB50689475C6283AAB56449D5C288 /* Pods_mc_oauth1_signer_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		45088E3D961CE33B04B3FC8F1812DDC1 /* Pods-mc-oauth1-signer_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F023F8F59E6627E60D5B3DA613ECBAC /* Build configuration list for PBXNativeTarget "Pods-mc-oauth1-signer_Tests" */;
+			buildPhases = (
+				72EF4A6A87F6F6CE177212B62EC5CDE7 /* Headers */,
+				5396CD395FF78A72EE1ECA5F9E115E30 /* Sources */,
+				7BBE014F56E662A4AB23B16459D40FBE /* Frameworks */,
+				F23750D1689A0CB925AE89253D6461EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				438CAD51CE5A5DECB93944E684D8EC5A /* PBXTargetDependency */,
+			);
+			name = "Pods-mc-oauth1-signer_Tests";
+			productName = "Pods-mc-oauth1-signer_Tests";
+			productReference = 022D16238A4A265EF2D9D98982A8D260 /* Pods_mc_oauth1_signer_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DA1F6517F0C390D47374BE3C8C9B84D2 /* mc-oauth1-signer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 659563E33D8A972C861533DE248B8942 /* Build configuration list for PBXNativeTarget "mc-oauth1-signer" */;
+			buildPhases = (
+				BCD55C120373E1DCD237727D0A74297A /* Headers */,
+				70021B59AE52AE09BBBAAE96442D403B /* Sources */,
+				202229CB61DCFFEA139D05E2D5A2B5B9 /* Frameworks */,
+				A3E194CD02373EBD2296A58878463057 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mc-oauth1-signer";
+			productName = "mc-oauth1-signer";
+			productReference = D5299FAADFFC5696525EA6301D732B63 /* mc_oauth1_signer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 067AF5A749ECED53BE75294B8DECD313 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA1F6517F0C390D47374BE3C8C9B84D2 /* mc-oauth1-signer */,
+				2FEBC2D60F73D325FA771F5CD6B64621 /* Pods-mc-oauth1-signer_Example */,
+				45088E3D961CE33B04B3FC8F1812DDC1 /* Pods-mc-oauth1-signer_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A3E194CD02373EBD2296A58878463057 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFBD598D62D82ADA78E5F89ED4E975CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F23750D1689A0CB925AE89253D6461EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5396CD395FF78A72EE1ECA5F9E115E30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B4C02D84790A06ED4FFF6422C17485E /* Pods-mc-oauth1-signer_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70021B59AE52AE09BBBAAE96442D403B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCB0C0C85FB3BF200AE2EBCDC75C6126 /* Data+OAuth1Signer.swift in Sources */,
+				184B12E7703573D289B138CB24A38FCE /* KeyProvider.swift in Sources */,
+				BCA54C81772F7309AF178857D53B72F3 /* mc-oauth1-signer-dummy.m in Sources */,
+				771466D9F96887E120D62A8278A6BF5B /* OAuth.swift in Sources */,
+				C9861D7A432CA3CA1D0B6CF59A7337F3 /* String+OAuth1Signer.swift in Sources */,
+				A8EB25067B8C59D0E6924F8A669C59FA /* URL+OAuth1Signer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C36CC27B6F7D072D0A60A8C7FD6B3303 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31CA280B52C844D35270EE76B6E770AA /* Pods-mc-oauth1-signer_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		438CAD51CE5A5DECB93944E684D8EC5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-mc-oauth1-signer_Example";
+			target = 2FEBC2D60F73D325FA771F5CD6B64621 /* Pods-mc-oauth1-signer_Example */;
+			targetProxy = 5D48FA904B43E531FE1AC419D664F9B0 /* PBXContainerItemProxy */;
+		};
+		ADA140AE48CDA7EEF432E2821B7B91EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "mc-oauth1-signer";
+			target = DA1F6517F0C390D47374BE3C8C9B84D2 /* mc-oauth1-signer */;
+			targetProxy = F379066C06EE6274D702A093704652BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		55AC11FF9CA2F533FC2B19D62127A02B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A84978741F37259C7C0E32808451030C /* Pods-mc-oauth1-signer_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-mc-oauth1-signer_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-mc-oauth1-signer_Tests/Pods-mc-oauth1-signer_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8C3D32AC054F4DBEE82EB2FD6A303D73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9FC4DE4ABE273EBCFBC52A84C6D5B453 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2415BED147CF73EACCC550D3D76177B5 /* mc-oauth1-signer.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/mc-oauth1-signer/mc-oauth1-signer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/mc-oauth1-signer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/mc-oauth1-signer/mc-oauth1-signer.modulemap";
+				PRODUCT_MODULE_NAME = mc_oauth1_signer;
+				PRODUCT_NAME = mc_oauth1_signer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B751CA5B597BFC35A6C0287C65F9E2E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BE3393F0D150645D66ACE4CB11DC59F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B68F1E1B0FB552D14428F9559E53323 /* Pods-mc-oauth1-signer_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-mc-oauth1-signer_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-mc-oauth1-signer_Example/Pods-mc-oauth1-signer_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D846A18DE11A34E072EAE367F63A0BFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2415BED147CF73EACCC550D3D76177B5 /* mc-oauth1-signer.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/mc-oauth1-signer/mc-oauth1-signer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/mc-oauth1-signer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/mc-oauth1-signer/mc-oauth1-signer.modulemap";
+				PRODUCT_MODULE_NAME = mc_oauth1_signer;
+				PRODUCT_NAME = mc_oauth1_signer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ED85EFAE75AD176827FA4A2C00E4FEC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 490064BEA07F4C6D6F63054B395629F6 /* Pods-mc-oauth1-signer_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-mc-oauth1-signer_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-mc-oauth1-signer_Tests/Pods-mc-oauth1-signer_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EDFCEA2CC95907D585B6AD1445C541F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6EDC1CCEB098242B8E35974D59104DC /* Pods-mc-oauth1-signer_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-mc-oauth1-signer_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-mc-oauth1-signer_Example/Pods-mc-oauth1-signer_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C3D32AC054F4DBEE82EB2FD6A303D73 /* Debug */,
+				B751CA5B597BFC35A6C0287C65F9E2E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		659563E33D8A972C861533DE248B8942 /* Build configuration list for PBXNativeTarget "mc-oauth1-signer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FC4DE4ABE273EBCFBC52A84C6D5B453 /* Debug */,
+				D846A18DE11A34E072EAE367F63A0BFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F023F8F59E6627E60D5B3DA613ECBAC /* Build configuration list for PBXNativeTarget "Pods-mc-oauth1-signer_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED85EFAE75AD176827FA4A2C00E4FEC1 /* Debug */,
+				55AC11FF9CA2F533FC2B19D62127A02B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D512B9E10C920CE0F9427E289FAD775F /* Build configuration list for PBXNativeTarget "Pods-mc-oauth1-signer_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDFCEA2CC95907D585B6AD1445C541F4 /* Debug */,
+				BE3393F0D150645D66ACE4CB11DC59F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

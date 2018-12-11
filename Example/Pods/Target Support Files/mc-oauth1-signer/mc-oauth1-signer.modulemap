@@ -1,0 +1,6 @@
+framework module mc_oauth1_signer {
+  umbrella header "mc-oauth1-signer-umbrella.h"
+
+  export *
+  module * { export * }
+}
