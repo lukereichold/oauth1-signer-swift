@@ -1,6 +1,5 @@
 import Foundation
 import Security
-import CommonCrypto
 
 public struct OAuth {
     
