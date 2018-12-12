@@ -1,4 +1,4 @@
-# mc-oauth1-signer
+# Mastercard OAuth 1.0 Signature Client
 
 ## Example
 
@@ -10,6 +10,12 @@ mc-oauth1-signer is available through [CocoaPods](https://cocoapods.org). To ins
 
 ```ruby
 pod 'mc-oauth1-signer'
+
+```
+
+You can then import the framework from Swift:
+```swift
+import mc_oauth1_signer
 ```
 
 ## Author
