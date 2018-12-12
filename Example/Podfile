@@ -4,10 +4,10 @@ platform :ios, '11.0'
 
 target 'mc-oauth1-signer_Example' do
   pod 'mc-oauth1-signer', :path => '../'
+  pod 'Alamofire', '~> 4.0'
 
   target 'mc-oauth1-signer_Tests' do
     inherit! :search_paths
-
     
   end
 end
