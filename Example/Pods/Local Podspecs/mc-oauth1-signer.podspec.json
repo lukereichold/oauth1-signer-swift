@@ -12,7 +12,7 @@
     "git": "luke@reikam.com"
   },
   "source": {
-    "git": "https://github.com/lukereichold/oauth1-signer-swift.git",
+    "git": "git@github.com:lukereichold/oauth1-signer-swift.git",
     "tag": "0.2.0"
   },
   "swift_version": "4.2",
