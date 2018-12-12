@@ -1,8 +1,8 @@
 # run `pod lib lint mc-oauth1-signer.podspec' to validate before submitting
 
 Pod::Spec.new do |s|
-  s.name             = 'mc-oauth1-signer'
-  s.version          = '0.2.0'
+  s.name             = 'MastercardOAuth'
+  s.version          = '0.3.0'
   s.summary          = 'Zero dependency library for generating a Mastercard API compliant OAuth signature in Swift'
 
   s.description      = <<-DESC
