@@ -15,7 +15,6 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		8C929CB078D160CAA51F7833 /* Pods_mc_oauth1_signer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027A9FEB1866E2A81C552071 /* Pods_mc_oauth1_signer_Example.framework */; };
 		C306B88021C1AB9A008E76AA /* MastercardOAuth.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C306B87F21C1AB9A008E76AA /* MastercardOAuth.podspec */; };
-		C356AD6221C08FE500752850 /* ***REMOVED***.p12 in Resources */ = {isa = PBXBuildFile; fileRef = C356AD6121C08FE500752850 /* ***REMOVED***.p12 */; };
 		E85710446B9D74B3C9356065 /* Pods_mc_oauth1_signer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0891400B2D1F729E96E80D /* Pods_mc_oauth1_signer_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		7D5F1136DEBC54E54AFD8FE4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		9E7511D696D028878DC497ED /* Pods-mc-oauth1-signer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mc-oauth1-signer_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-mc-oauth1-signer_Example/Pods-mc-oauth1-signer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C306B87F21C1AB9A008E76AA /* MastercardOAuth.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MastercardOAuth.podspec; path = ../MastercardOAuth.podspec; sourceTree = "<group>"; };
-		C356AD6121C08FE500752850 /* ***REMOVED***.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "***REMOVED***.p12"; sourceTree = "<group>"; };
 		FD6BC7493C967CC9B0B20D8C /* Pods-mc-oauth1-signer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mc-oauth1-signer_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mc-oauth1-signer_Tests/Pods-mc-oauth1-signer_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,7 +110,6 @@
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				C356AD6121C08FE500752850 /* ***REMOVED***.p12 */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = Example;
@@ -254,7 +251,6 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				C356AD6221C08FE500752850 /* ***REMOVED***.p12 in Resources */,
 				C306B88021C1AB9A008E76AA /* MastercardOAuth.podspec in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
