@@ -41,13 +41,11 @@ Example usage:
 ```swift
   let uri = URL(string: "https://sandbox.api.mastercard.com/service")!
   let method = "GET"
-  let examplePayload: [String: String] = ["time": 1544648047,
-                                          "signature": "signatureString",
-                                          "languageId": 1,
+  let examplePayload: [String: String] = ["languageId": 1,
                                           "geographicId": 0]
   let payloadJSON = (try? JSONSerialization.data(withJSONObject: examplePayload, options: [])) ?? Data()
   let payloadString = String(data: payloadJSON, encoding: .utf8)
-        
+  
   let consumerKey = "<insert consumer key from developer portal>"
   let signingKey = "<initialize private key matching the consumer key>"
 
