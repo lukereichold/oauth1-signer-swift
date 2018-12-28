@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## mc-oauth1-signer
+## MastercardOAuth
 
 Copyright (c) 2018 Luke Reichold <luke@reikam.com>
 

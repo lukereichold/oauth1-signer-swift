@@ -1,23 +1,23 @@
 PODS:
   - Alamofire (4.8.0)
-  - mc-oauth1-signer (0.2.0)
+  - MastercardOAuth (0.4.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
-  - mc-oauth1-signer (from `../`)
+  - MastercardOAuth (from `../`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
 
 EXTERNAL SOURCES:
-  mc-oauth1-signer:
+  MastercardOAuth:
     :path: "../"
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  mc-oauth1-signer: 729542b5b3f1c24445632ed8b0d0bece6968ed0e
+  MastercardOAuth: 88095be043664ea3db340f8f5da12d150d9d72bb
 
-PODFILE CHECKSUM: 1eeadcaaee9806db334197bd8433040093359685
+PODFILE CHECKSUM: 7453bdc22497d70457cb6bb4c851e507525173ae
 
 COCOAPODS: 1.5.3

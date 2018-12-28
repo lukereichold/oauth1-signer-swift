@@ -1,7 +1,7 @@
 import UIKit
 import Alamofire
 import CommonCrypto
-import mc_oauth1_signer
+import MastercardOAuth
 
 class ViewController: UIViewController {
 

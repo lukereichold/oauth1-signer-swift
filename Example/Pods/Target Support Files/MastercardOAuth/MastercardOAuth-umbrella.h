@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double mc_oauth1_signerVersionNumber;
-FOUNDATION_EXPORT const unsigned char mc_oauth1_signerVersionString[];
+FOUNDATION_EXPORT double MastercardOAuthVersionNumber;
+FOUNDATION_EXPORT const unsigned char MastercardOAuthVersionString[];
 

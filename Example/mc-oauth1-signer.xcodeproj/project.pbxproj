@@ -320,14 +320,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-mc-oauth1-signer_Example/Pods-mc-oauth1-signer_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/mc-oauth1-signer/mc_oauth1_signer.framework",
+				"${BUILT_PRODUCTS_DIR}/MastercardOAuth/MastercardOAuth.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mc_oauth1_signer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MastercardOAuth.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

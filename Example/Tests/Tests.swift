@@ -1,5 +1,5 @@
 import XCTest
-import mc_oauth1_signer
+import MastercardOAuth
 
 class Tests: XCTestCase {
     

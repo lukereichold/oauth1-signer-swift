@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CFF3FC7130023BD8AB6B9958D52B18E5"
-               BuildableName = "mc_oauth1_signer.framework"
-               BlueprintName = "mc-oauth1-signer"
+               BlueprintIdentifier = "E086777CD103965D0BBDCE65A5476383"
+               BuildableName = "MastercardOAuth.framework"
+               BlueprintName = "MastercardOAuth"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CFF3FC7130023BD8AB6B9958D52B18E5"
-            BuildableName = "mc_oauth1_signer.framework"
-            BlueprintName = "mc-oauth1-signer"
+            BlueprintIdentifier = "E086777CD103965D0BBDCE65A5476383"
+            BuildableName = "MastercardOAuth.framework"
+            BlueprintName = "MastercardOAuth"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
