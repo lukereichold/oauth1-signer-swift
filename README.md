@@ -17,7 +17,7 @@ The two key pieces of information you will need are:
 
 ### Install
 
-mc-oauth1-signer is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
+`MastercardOAuth` is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'MastercardOAuth'
@@ -34,7 +34,7 @@ The method that does all the heavy lifting is `OAuth.authorizationHeader()`. You
 
 ### Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, first clone the repo and then `pod install` from the Example directory.
 
 Example usage:
 
@@ -53,7 +53,9 @@ Example usage:
 
 ```
 
-You can use the utility `KeyProvider.swift` to create a `SecKey` object representing your developer private key. Simply pass in the bundle path containing your `Certificate.p12` to `KeyProvider.loadPrivateKey(fromPath certificatePath: String, keyPassword: String) -> SecKey?`.
+You can use the utility `KeyProvider.swift` to create a `SecKey` object representing your developer private key. Simply pass in the bundle path containing your `Certificate.p12` to:
+
+```KeyProvider.loadPrivateKey(fromPath certificatePath: String, keyPassword: String) -> SecKey?```
 
 ## Author
 
