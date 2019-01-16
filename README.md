@@ -28,6 +28,8 @@ You can then import the framework from Swift:
 import MastercardOAuth
 ```
 
+*Note: Use of this library as a pod requires Xcode 10 or later.*
+
 ### Creating a valid OAuth Authorization header string
 
 The method that does all the heavy lifting is `OAuth.authorizationHeader()`. You can call into it directly and as long as you provide the correct parameters, it will return a string that you can add into your HTTP request's `Authorization` header.
