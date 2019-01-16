@@ -1,9 +1,8 @@
 import UIKit
 import Alamofire
-import CommonCrypto
 import MastercardOAuth
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,13 +10,12 @@ class ViewController: UIViewController {
     }
 
     func requestService() {
-        let urlString = "https://sandbox.api.mastercard.com/service"
+        let urlString = "https://sandbox.api.mastercard.com/<<REPLACE_ME>>"
         let method = "POST";
         let uri = URL(string: urlString)!
         let consumerKey = "<<REPLACE_ME>>"
         
-        let payload: Parameters = [
-                                   "languageId": 1,
+        let payload: Parameters = ["languageId": 1,
                                    "geographicId": 0]
         
         let payloadJSON = (try? JSONSerialization.data(withJSONObject: payload, options: [])) ?? Data()
@@ -36,9 +34,9 @@ class ViewController: UIViewController {
             response in
             switch response.result {
             case .success:
-                print(response)
+                debugPrint(response)
             case .failure(let error):
-                print(error)
+                debugPrint(error)
             }
         }
     }
