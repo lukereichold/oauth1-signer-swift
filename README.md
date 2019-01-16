@@ -8,7 +8,7 @@ Zero dependency Swift library for generating a Mastercard API compliant OAuth si
 
 ### Prerequisites
 
-Before using this library, you will need to set up a project and key in the Mastercard Developers Portal.
+Before using this library, you will need to set up a project and key in the [Mastercard Developers Portal](https://developer.mastercard.com).
 
 The two key pieces of information you will need are:
 
