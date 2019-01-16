@@ -17,7 +17,6 @@ Zero dependency library for generating a Mastercard API compliant OAuth signatur
   s.ios.deployment_target = '11.0'
 
   s.source_files = 'mc-oauth1-signer/Classes/**/*'
-  # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation', 'Security'
 
 end
