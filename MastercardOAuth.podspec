@@ -1,4 +1,4 @@
-# run `pod lib lint mc-oauth1-signer.podspec' to validate before submitting
+# run `pod lib lint MastercardOAuth.podspec' to validate before submitting
 
 Pod::Spec.new do |s|
   s.name             = 'MastercardOAuth'
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 Zero dependency library for generating a Mastercard API compliant OAuth signature in Swift.
                        DESC
 
-  s.homepage         = 'https://github.com/lukereichold/oauth1-signer-swift'
+  s.homepage         = 'https://developer.mastercard.com'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'git' => 'luke@reikam.com' }
   s.source           = { :git => 'git@github.com:lukereichold/oauth1-signer-swift.git', :tag => s.version.to_s }
