@@ -14,6 +14,6 @@ extension String {
     
     func base64Hash() -> String? {
         guard let data = data(using: .utf8) else { return nil }
-        return Data(bytes: SHA256.hash(data: data)).base64EncodedString()
+        return Data(SHA256.hash(data: data)).base64EncodedString()
     }
 }

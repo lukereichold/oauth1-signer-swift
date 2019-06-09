@@ -5,8 +5,6 @@ import CryptoKit // TODO: REMOVE ME
 final class MastercardOAuth1SignerTests: XCTestCase {
     func testExample() {
         XCTAssertEqual(MastercardOAuth1Signer().text, "Hello, World!")
-        
-        let foo = "hfdjkasfhadsjfhaldks"
     }
 
     static var allTests = [
