@@ -76,7 +76,7 @@ private extension OAuth {
     static func oauthParameters(withKey consumerKey: String, payload: String?) -> [String: String] {
         var oauthParams = [String: String]()
         if payload != nil {
-            oauthParams["oauth_body_hash"] = payload?.sha256()?.base64String() ?? ""
+            oauthParams["oauth_body_hash"] = payload?.base64Hash() ?? ""
         }
         oauthParams["oauth_consumer_key"] = consumerKey.addingPercentEncoding(withAllowedCharacters: .alphanumerics)
         oauthParams["oauth_nonce"] = nonce()
