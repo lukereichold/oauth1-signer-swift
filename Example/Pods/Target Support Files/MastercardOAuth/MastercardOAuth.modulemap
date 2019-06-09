@@ -1,6 +1,0 @@
-framework module MastercardOAuth {
-  umbrella header "MastercardOAuth-umbrella.h"
-
-  export *
-  module * { export * }
-}
