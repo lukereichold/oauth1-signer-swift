@@ -112,6 +112,6 @@ private extension OAuth {
     }
     
     static func currentUnixTimestamp() -> String {
-        return String(Int(Date().timeIntervalSince1970))
+        String(Int(Date().timeIntervalSince1970))
     }
 }

@@ -5,11 +5,11 @@ extension String: Error {}
 
 extension String {
     subscript (i: Int) -> Character {
-        return self[index(startIndex, offsetBy: i)]
+        self[index(startIndex, offsetBy: i)]
     }
     
     subscript (i: Int) -> String {
-        return String(self[i] as Character)
+        String(self[i] as Character)
     }
     
     func base64Hash() -> String? {
